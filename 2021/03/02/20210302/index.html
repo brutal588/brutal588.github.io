@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/kennel32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/kennel16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"brutal588.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这篇文章是主题优化的记录，将会持续更新。（主要记录改动哪个文件以备后用，从各处搜刮来的代码，就暂不附上了）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="主题优化（持续更新）">
+<meta property="og:url" content="https://brutal588.github.io/2021/03/02/20210302/index.html">
+<meta property="og:site_name" content="301 kennel">
+<meta property="og:description" content="这篇文章是主题优化的记录，将会持续更新。（主要记录改动哪个文件以备后用，从各处搜刮来的代码，就暂不附上了）">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://brutal588.github.io/2021/03/02/20210302/exhausted....GIF">
+<meta property="article:published_time" content="2021-03-02T08:27:07.000Z">
+<meta property="article:modified_time" content="2021-03-22T14:29:52.759Z">
+<meta property="article:author" content="brutal">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://brutal588.github.io/2021/03/02/20210302/exhausted....GIF">
+
+<link rel="canonical" href="https://brutal588.github.io/2021/03/02/20210302/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>主题优化（持续更新） | 301 kennel</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">301 kennel</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">home sweet home</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-friend-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>Friend links</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://brutal588.github.io/2021/03/02/20210302/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar_2.gif">
+      <meta itemprop="name" content="brutal">
+      <meta itemprop="description" content="希望明天是个好天气。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="301 kennel">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          主题优化（持续更新）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-03-02 16:27:07" itemprop="dateCreated datePublished" datetime="2021-03-02T16:27:07+08:00">2021-03-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-22 22:29:52" itemprop="dateModified" datetime="2021-03-22T22:29:52+08:00">2021-03-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BE%B9%E5%AD%A6%E8%BE%B9%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">边学边记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2021/03/02/20210302/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/02/20210302/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这篇文章是主题优化的记录，将会持续更新。（主要记录改动哪个文件以备后用，从各处搜刮来的代码，就暂不附上了）</p>
+<img src="/2021/03/02/20210302/exhausted....GIF" alt="exhausted..." style="zoom:67%;">
+
+<span id="more"></span>
+
+
+
+<h1 id="20210302"><a href="#20210302" class="headerlink" title="20210302"></a>20210302</h1><p>今天尝试了更多的东西，也遇到了一些麻烦，目前姑且做出了比较满意的效果。记录一下今天添加的改动。</p>
+<h2 id="网页icon"><a href="#网页icon" class="headerlink" title="网页icon"></a>网页icon</h2><p>找参考画了狗屋的图片，设置为透明背景的png（第一次弄错成jpg了会有白底…）,图像尽量充满画布，在网上进行png→icon的转换，保存到主题/source/images下，在主题配置文件中favicon部分修改成制作好的icon的名字即可。</p>
+<h2 id="网页背景图片、文章阴影、博客内容透明化等"><a href="#网页背景图片、文章阴影、博客内容透明化等" class="headerlink" title="网页背景图片、文章阴影、博客内容透明化等"></a>网页背景图片、文章阴影、博客内容透明化等</h2><p>均在blog/source/_data下的styles.styl中进行，将代码添加进去修改调整即可。还没有完全弄懂这几个应该怎么调整…</p>
+<h2 id="圆角设置"><a href="#圆角设置" class="headerlink" title="圆角设置"></a>圆角设置</h2><p>在variables.styl中添加相应代码，在主题配置文件中取消variables.styl的注释即可。</p>
+<h2 id="页脚的网站建立时间记录"><a href="#页脚的网站建立时间记录" class="headerlink" title="页脚的网站建立时间记录"></a>页脚的网站建立时间记录</h2><p>在主题/layout/_particals下的footer.swig中加入相应代码，修改时间为建站时间（”月月/日日/年年年年 xx:xx:xx”）。也有在data文件夹下新建footer.swig的方法，最后两种都改了，不知道是哪种在起作用…</p>
+<p>这一步的时候遇到了一些问题，在hexo g的时候总是报错，然后在hexo s时出现</p>
+<p>template render error: (d:\blog\themes\next\layout\inject\footer\custom.swig) [line 60, column 15]</p>
+<p>一类的错误提示，后面整来整去不知道怎么回事最后终于可以正常显示了…</p>
+<h2 id="调整文字大小"><a href="#调整文字大小" class="headerlink" title="调整文字大小"></a>调整文字大小</h2><p>在主题/source/css/_variables下的base.styl中修改// Font size，大致弄得比较舒服了。</p>
+<h2 id="添加了点击查看图片的插件"><a href="#添加了点击查看图片的插件" class="headerlink" title="添加了点击查看图片的插件"></a>添加了点击查看图片的插件</h2><p>直接下载插件即可。（这里因为内容页面设置了整体的透明度&lt;1，所以在显示图片的时候会有背景透出来，或者该说是整张图片的颜色变淡？或许还是调回1比较好呢…）</p>
+<hr>
+<p>鼠标特效、打字特效、动态背景等等没有尝试，或许以后心血来潮会弄一下吧…</p>
+<p>还想要改进的地方：圆角设置之后菜单栏背后还是会有方形框，不知道是什么原因造成的…</p>
+<h1 id="20210303更新"><a href="#20210303更新" class="headerlink" title="20210303更新"></a>20210303更新</h1><h2 id="背景透明化"><a href="#背景透明化" class="headerlink" title="背景透明化"></a>背景透明化</h2><p>将之前弄的干掉了。重新设置了在主题/source/css/相应scheme下的index.styl中修改background 的数据，可以调整背景透明度（虽然由于跟教程上的操作不太一样，我好像没有看到什么效果？）。</p>
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>新增links的page，在根目录/source/links下的index.md中添加代码，然后在styles.styl中添加个性化设置的代码（调整各种颜色，头像旋转等），在_data下新建links.yml文件，添加友链的具体内容（name, avatar, site, info ），最后在主题配置文件中menu下增加Friend links即可。</p>
+<p>参考<a target="_blank" rel="noopener" href="https://geniucker.now.sh/2020/04/25/Hexo-NexT%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/">Geniucker的文章</a>，感谢。</p>
+<h2 id="valine评论功能"><a href="#valine评论功能" class="headerlink" title="valine评论功能"></a>valine评论功能</h2><p>1、注册Leancloud账号，一系列设置</p>
+<p>2、在主题配置文件中comments下active: 设置为valine，在valine栏下打开，填入appid、appkey，进行具体设置（读取qq信息的功能暂未开启）。</p>
+<p>测试了一下可以正常使用。</p>
+<p>参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/257707609">Vince的文章</a>，感谢。</p>
+<h1 id="20210314更新"><a href="#20210314更新" class="headerlink" title="20210314更新"></a>20210314更新</h1><h2 id="解决了搜索功能无法使用的错误"><a href="#解决了搜索功能无法使用的错误" class="headerlink" title="解决了搜索功能无法使用的错误"></a>解决了搜索功能无法使用的错误</h2><p>似乎是之前没有下载搜索插件导致的错误。。</p>
+<p>直接在命令窗口blog文件夹下运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>即可</p>
+<h1 id="20210317更新"><a href="#20210317更新" class="headerlink" title="20210317更新"></a>20210317更新</h1><h2 id="添加了背景音乐"><a href="#添加了背景音乐" class="headerlink" title="添加了背景音乐"></a>添加了背景音乐</h2><p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45533937/article/details/105496572">gman344的文章</a>，感谢分享。</p>
+<p>使用了网易云的外链音乐插件。打开网易云网页版，分享歌单到动态（歌单中不可以含有有版权问题的歌曲），然后可以看到生成外链的按键，复制代码，在主题/layout/_macro/sidebar.swig下找到sidebar-inner，将复制的代码粘贴到相应位置，调整一下大小即可。</p>
+<h2 id="暂时关闭了valine评论系统"><a href="#暂时关闭了valine评论系统" class="headerlink" title="暂时关闭了valine评论系统"></a>暂时关闭了valine评论系统</h2><p>这两天一直在搞valine，搞得焦头烂额，最后还是没有解决问题。。大概的经过是：我想要添加评论的邮件通知功能，查了下发现需要leancloud绑域名才可以后台管理，然后整了半天也没成功，后来发现我想要的可以查看和删除评论的功能其实在leancloud上的数据库里直接可以办到，，然后弄了弄邮件提醒，也发送成功了（我和评论的人都可以收到通知），但是新的问题是评论的统计数（大概这个是根本的问题），在昨天和今天新发送的评论没有办法被计入评论数，有时候会在不对应的文章底部显示，盖掉原本的评论，没有数量提示这点是关键问题。。非常苦恼。。终于下定决心重新从零开始配置一个国际版leancloud，然后基本上原样复制了之后发现根本没办法发送评论，在home页面也不会显示每篇文章的评论数（只有气泡和valine字样，但是没有：，后面也没有数字）该说是评论区的按钮都没有用。（只有valine的链接可以打开）感到很烦躁。最后又改回了最初的版本，发现还是没有办法显示评论数，非常苦恼。。。</p>
+<p>这几天查了相当多的教程，还没有发现完全符合我出现的bug的解决方案，常常是打开了十几二十个标签，回来不知道自己在看哪一篇教程。。。</p>
+<p>一些可能存在的错误/疑问：</p>
+<ul>
+<li>appId 和 appKey 是否要改成 app_id 和 app_key？</li>
+<li>appid中，-后的字符是否要删掉？</li>
+<li>leancloud中设置的安全域名，最后是否要删掉/？</li>
+<li>Valine.min.js是下载到本地还是直接调用源库？</li>
+<li>…</li>
+</ul>
+<p>本来想尝试一下别的评论系统，查了一下好像都没有邮件通知功能，有点遗憾。</p>
+<p>之前的评论有在leancloud上保存，我也下载到本地了，感谢大家的评论，就算之后不再开启评论功能我也会好好保存的（鞠躬）。</p>
+<p>也许将来的某一天当我能够顺利驯服valine之后再开启评论功能。</p>
+<h1 id="20210322更新"><a href="#20210322更新" class="headerlink" title="20210322更新"></a>20210322更新</h1><h2 id="重启了valine评论系统"><a href="#重启了valine评论系统" class="headerlink" title="重启了valine评论系统"></a>重启了valine评论系统</h2><p>之前调试了好久都没办法正常工作，看到麻醉桑说pjax（在使音乐全局播放的功能中使用了）和一些插件不兼容，想起来自己检查网页的时候好像也有看到类似的错误，试着关掉了之后，valine他又可以用了…弄了好几天，结果没有找到正确问题…也算吃一堑张吧，不好好使用网页检查不行啊…</p>
+<p>然后是leancloud自动唤醒失败的问题，看到有用第三方进行访问唤醒的教程，等更加有空闲的时候再试试看吧，现在姑且想起来的时候去看看有没有新评论就行（姑且…）</p>
+<h2 id="增加了valine评论框中的图片"><a href="#增加了valine评论框中的图片" class="headerlink" title="增加了valine评论框中的图片"></a>增加了valine评论框中的图片</h2><p>代码加在了source/_data下的styles.styl里。开始弄了本地路径的图片不行，上传到图床之后可以显示出来了（感谢U桑的帮助）。</p>
+<p>第一次使用图床，感觉蛮方便的！有空多试几种看看。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/01/20210301/" rel="prev" title="新的学期_20210301">
+      <i class="fa fa-chevron-left"></i> 新的学期_20210301
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/03/04/20210304/" rel="next" title="有关毒蘑菇的小知识">
+      有关毒蘑菇的小知识 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+    <!--网易云插件-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=39227591&auto=1&height=66"></iframe>
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#20210302"><span class="nav-number">1.</span> <span class="nav-text">20210302</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5icon"><span class="nav-number">1.1.</span> <span class="nav-text">网页icon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E3%80%81%E6%96%87%E7%AB%A0%E9%98%B4%E5%BD%B1%E3%80%81%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E9%80%8F%E6%98%8E%E5%8C%96%E7%AD%89"><span class="nav-number">1.2.</span> <span class="nav-text">网页背景图片、文章阴影、博客内容透明化等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%86%E8%A7%92%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">圆角设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E8%84%9A%E7%9A%84%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B%E6%97%B6%E9%97%B4%E8%AE%B0%E5%BD%95"><span class="nav-number">1.4.</span> <span class="nav-text">页脚的网站建立时间记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.5.</span> <span class="nav-text">调整文字大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%86%E7%82%B9%E5%87%BB%E6%9F%A5%E7%9C%8B%E5%9B%BE%E7%89%87%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">添加了点击查看图片的插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210303%E6%9B%B4%E6%96%B0"><span class="nav-number">2.</span> <span class="nav-text">20210303更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">2.1.</span> <span class="nav-text">背景透明化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5"><span class="nav-number">2.2.</span> <span class="nav-text">友情链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#valine%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">2.3.</span> <span class="nav-text">valine评论功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210314%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">20210314更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%86%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">3.1.</span> <span class="nav-text">解决了搜索功能无法使用的错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210317%E6%9B%B4%E6%96%B0"><span class="nav-number">4.</span> <span class="nav-text">20210317更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%86%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90"><span class="nav-number">4.1.</span> <span class="nav-text">添加了背景音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%82%E6%97%B6%E5%85%B3%E9%97%AD%E4%BA%86valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.2.</span> <span class="nav-text">暂时关闭了valine评论系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210322%E6%9B%B4%E6%96%B0"><span class="nav-number">5.</span> <span class="nav-text">20210322更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E4%BA%86valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.1.</span> <span class="nav-text">重启了valine评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E4%BA%86valine%E8%AF%84%E8%AE%BA%E6%A1%86%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87"><span class="nav-number">5.2.</span> <span class="nav-text">增加了valine评论框中的图片</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="brutal"
+      src="/images/avatar_2.gif">
+  <p class="site-author-name" itemprop="name">brutal</p>
+  <div class="site-description" itemprop="description">希望明天是个好天气。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:dbrutal588@gmail.com" title="E-Mail → mailto:dbrutal588@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Brutal588" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Brutal588" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">brutal</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">63k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">58 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("02/28/2021 22:30:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "这间狗屋已经搭好 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">这里挤满了38.8k只小猫</span>
+</div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'aKu1cNLC00MOtgwcgOlh3lL1-gzGzoHsz',
+      appKey     : '2CmjnXT0NVnkzGn89pCYEXL3',
+      placeholder: "来发条comment吧 :D\n请填写昵称和email以便收到邮件通知 owo",
+      avatar     : 'mp',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>

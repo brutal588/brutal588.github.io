@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/kennel32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/kennel16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"brutal588.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="记录一下在codewars上面做到python练习题以及一些笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="codewars_python练习笔记（ongoing">
+<meta property="og:url" content="https://brutal588.github.io/2022/08/11/codewars-python%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="301 kennel">
+<meta property="og:description" content="记录一下在codewars上面做到python练习题以及一些笔记">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://brutal588.github.io/2022/08/11/codewars-python%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/0801-figure1.png">
+<meta property="article:published_time" content="2022-08-11T11:54:42.000Z">
+<meta property="article:modified_time" content="2022-10-01T10:25:05.156Z">
+<meta property="article:author" content="brutal">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://brutal588.github.io/2022/08/11/codewars-python%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/0801-figure1.png">
+
+<link rel="canonical" href="https://brutal588.github.io/2022/08/11/codewars-python%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>codewars_python练习笔记（ongoing | 301 kennel</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">301 kennel</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">home sweet home</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-friend-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>Friend links</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://brutal588.github.io/2022/08/11/codewars-python%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar_2.gif">
+      <meta itemprop="name" content="brutal">
+      <meta itemprop="description" content="希望明天是个好天气。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="301 kennel">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          codewars_python练习笔记（ongoing
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-08-11 19:54:42" itemprop="dateCreated datePublished" datetime="2022-08-11T19:54:42+08:00">2022-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-10-01 18:25:05" itemprop="dateModified" datetime="2022-10-01T18:25:05+08:00">2022-10-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BE%B9%E5%AD%A6%E8%BE%B9%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">边学边记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2022/08/11/codewars-python%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/11/codewars-python%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>26k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>23 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>记录一下在codewars上面做到python练习题以及一些笔记</p>
+<span id="more"></span>
+
+<h3 id="001-迭代-条件"><a href="#001-迭代-条件" class="headerlink" title="001 迭代+条件"></a>001 迭代+条件</h3><p>Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.</p>
+<p>For example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">unique_in_order(<span class="string">&#x27;AAAABBBCCDAABBB&#x27;</span>) == [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>]</span><br><span class="line">unique_in_order(<span class="string">&#x27;ABBCcAD&#x27;</span>)         == [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;D&#x27;</span>]</span><br><span class="line">unique_in_order([<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>])       == [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">unique_in_order</span>(<span class="params">iterable</span>):</span></span><br><span class="line">    result = []</span><br><span class="line">    n = <span class="built_in">len</span>(iterable)</span><br><span class="line">    a = iterable[<span class="number">0</span>]</span><br><span class="line">    result.append(a)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">        <span class="keyword">if</span> iterable[i] != result[<span class="built_in">len</span>(result)-<span class="number">1</span>]:</span><br><span class="line">            result.append(iterable[i])</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>涉及知识：</p>
+<p>1）python 迭代：iter()返回迭代器</p>
+<p>2）append 在列表末添加新对象，并作为新的result（这个没想到）</p>
+<p>emmm刚才那个没有解决空数组的情况，看了新的解答</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">unique_in_order</span>(<span class="params">iterable</span>):</span></span><br><span class="line">    result = []</span><br><span class="line">    pre_item = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> iterable:</span><br><span class="line">        <span class="keyword">if</span> item != pre_item:</span><br><span class="line">            result.append(item)</span><br><span class="line">            pre_item = item</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>这个似乎比较好理解，用了for循环和if条件</p>
+<h3 id="002-Exes-and-Ohs"><a href="#002-Exes-and-Ohs" class="headerlink" title="002 Exes and Ohs"></a>002 Exes and Ohs</h3><p>Check to see if a string has the same amount of ‘x’s and ‘o’s. The method must return a boolean and be case insensitive. The string can contain any char.</p>
+<p>Examples input/output:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">XO(&quot;ooxx&quot;) =&gt; true</span><br><span class="line">XO(&quot;xooxx&quot;) =&gt; false</span><br><span class="line">XO(&quot;ooxXm&quot;) =&gt; true</span><br><span class="line">XO(&quot;zpzpzpp&quot;) =&gt; true // when no &#x27;x&#x27; and &#x27;o&#x27; is present should return true</span><br><span class="line">XO(&quot;zzoo&quot;) =&gt; false</span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xo</span>(<span class="params">s</span>):</span></span><br><span class="line">    a1 = <span class="number">0</span></span><br><span class="line">    a2 = <span class="number">0</span></span><br><span class="line">    length = <span class="built_in">len</span>(s)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">0</span>,length):</span><br><span class="line">        <span class="keyword">if</span> s[i] == <span class="string">&quot;o&quot;</span> <span class="keyword">or</span> s[i] == <span class="string">&quot;O&quot;</span>:</span><br><span class="line">            a1 = a1 + <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> s[i] == <span class="string">&quot;x&quot;</span> <span class="keyword">or</span> s[i] == <span class="string">&quot;X&quot;</span>:</span><br><span class="line">            a2 = a2 + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> a1 == a2:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<p>嗯嗯嗯第一个完全自己改出来的没有错的！恭喜—— 虽然是比较笨的办法</p>
+<p>来看看最优解法吧：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">xo</span>(<span class="params">s</span>):</span></span><br><span class="line">    s = s.lower()</span><br><span class="line">    <span class="keyword">return</span> s.count(<span class="string">&#x27;x&#x27;</span>) == s.count(<span class="string">&#x27;o&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>.lower可以大写变小写</p>
+<p>另外还用到了count函数，记住了（记住了</p>
+<h3 id="003-Sum-of-odd-numbers"><a href="#003-Sum-of-odd-numbers" class="headerlink" title="003 Sum of odd numbers"></a>003 Sum of odd numbers</h3><p>Given the triangle of consecutive odd numbers:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">             <span class="number">1</span></span><br><span class="line">          <span class="number">3</span>     <span class="number">5</span></span><br><span class="line">       <span class="number">7</span>     <span class="number">9</span>    <span class="number">11</span></span><br><span class="line">   <span class="number">13</span>    <span class="number">15</span>    <span class="number">17</span>    <span class="number">19</span></span><br><span class="line"><span class="number">21</span>    <span class="number">23</span>    <span class="number">25</span>    <span class="number">27</span>    <span class="number">29</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (<strong>Input –&gt; Output</strong>)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 --&gt;  1</span><br><span class="line">2 --&gt; 3 + 5 = 8</span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">row_sum_odd_numbers</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="comment">#your code here</span></span><br><span class="line">    <span class="keyword">return</span> n ** <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>就是简单粗暴的数学题吧。。。</p>
+<h3 id="004-Find-the-missing-letter"><a href="#004-Find-the-missing-letter" class="headerlink" title="004 Find the missing letter"></a>004 Find the missing letter</h3><p>#Find the missing letter</p>
+<p>Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.</p>
+<p>You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.<br>The array will always contain letters in only one case.</p>
+<p>Example:</p>
+<p>[‘a’,’b’,’c’,’d’,’f’] -&gt; ‘e’ [‘O’,’Q’,’R’,’S’] -&gt; ‘P’</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;f&quot;] -&gt; &quot;e&quot;</span><br><span class="line">[&quot;O&quot;,&quot;Q&quot;,&quot;R&quot;,&quot;S&quot;] -&gt; &quot;P&quot;</span><br></pre></td></tr></table></figure>
+
+<p>(Use the English alphabet with 26 letters!)</p>
+<p>Have fun coding it and please don’t forget to vote and rank this kata! :-)</p>
+<p>I have also created other katas. Take a look if you enjoyed this kata!</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_missing_letter</span>(<span class="params">chars</span>):</span></span><br><span class="line">    length = <span class="built_in">len</span>(chars)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(chars)):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">ord</span>(chars[i])+<span class="number">1</span> != <span class="built_in">ord</span>(chars[i+<span class="number">1</span>]):</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">chr</span>(<span class="built_in">ord</span>(chars[i])+ <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>ord :chr() 函数（对于8位的ASCII字符串）或unichr() 函数（对于Unicode对象）的配对函数</p>
+<p>*分清题目中的chars和chr</p>
+<h3 id="005-Multiples-of-3-or-5"><a href="#005-Multiples-of-3-or-5" class="headerlink" title="005 Multiples of 3 or 5"></a>005 Multiples of 3 or 5</h3><p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
+<p>Finish the solution so that it returns the sum of all the multiples of 3 or 5 <strong>below</strong> the number passed in. Additionally, if the number is negative, return 0 (for languages that do have them).</p>
+<p><strong>Note:</strong> If the number is a multiple of <strong>both</strong> 3 and 5, only count it <em>once</em>.</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">number</span>):</span></span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">1</span>,number):</span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">3</span> == <span class="number">0</span> <span class="keyword">or</span> i % <span class="number">5</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">sum</span> = <span class="built_in">sum</span> + i</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>恩恩额又是比较笨的解法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">number</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(number) <span class="keyword">if</span> x % <span class="number">3</span> == <span class="number">0</span> <span class="keyword">or</span> x % <span class="number">5</span> == <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>最短的解法，其实思路是一样的嘛</p>
+<h3 id="006-String-ends-with"><a href="#006-String-ends-with" class="headerlink" title="006 String ends with?"></a>006 String ends with?</h3><p>Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).</p>
+<p>Examples:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">solution(<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;bc&#x27;</span>) <span class="comment"># returns true</span></span><br><span class="line">solution(<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;d&#x27;</span>) <span class="comment"># returns false</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">string, ending</span>):</span></span><br><span class="line">    <span class="comment"># your code here...</span></span><br><span class="line">    length = <span class="built_in">len</span>(string)</span><br><span class="line">    <span class="keyword">if</span> string[-<span class="built_in">len</span>(ending):] == ending:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">elif</span> ending == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>自己做出来了——</p>
+<p>更好的解法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">string, ending</span>):</span></span><br><span class="line">    <span class="keyword">return</span> string.endswith(ending)</span><br></pre></td></tr></table></figure>
+
+<p>.endwith  用来专门判断是否以某个字符串结尾</p>
+<h3 id="007-Bit-Counting"><a href="#007-Bit-Counting" class="headerlink" title="007 Bit Counting"></a>007 Bit Counting</h3><p>Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number. You can guarantee that input is non-negative.</p>
+<p><em>Example</em>: The binary representation of <code>1234</code> is <code>10011010010</code>, so the function should return <code>5</code> in this case</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">count_bits</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(<span class="built_in">bin</span>(n)).count(<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>嗯嗯直接用了count函数</p>
+<h3 id="008-Sum-of-two-lowest-positive-integers"><a href="#008-Sum-of-two-lowest-positive-integers" class="headerlink" title="008 Sum of two lowest positive integers"></a>008 Sum of two lowest positive integers</h3><p>Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.</p>
+<p>For example, when an array is passed like <code>[19, 5, 42, 2, 77]</code>, the output should be <code>7</code>.</p>
+<p><code>[10, 343445353, 3453445, 3453545353453]</code> should return <code>3453455</code>.</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_two_smallest_numbers</span>(<span class="params">numbers</span>):</span></span><br><span class="line">    <span class="comment">#your code here</span></span><br><span class="line">    i=<span class="built_in">min</span>(numbers)</span><br><span class="line">    numbers.remove(i)</span><br><span class="line">    j=<span class="built_in">min</span>(numbers)</span><br><span class="line">    <span class="keyword">return</span> i+j</span><br></pre></td></tr></table></figure>
+
+<p>remove() 函数用于移除列表中某个值的第一个匹配项</p>
+<h3 id="009-Shortest-Word"><a href="#009-Shortest-Word" class="headerlink" title="009 Shortest Word"></a>009 Shortest Word</h3><p>Simple, given a string of words, return the length of the shortest word(s).</p>
+<p>String will never be empty and you do not need to account for different data types.</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_short</span>(<span class="params">s</span>):</span></span><br><span class="line">    word_list = s.split()</span><br><span class="line">    len_list = []</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> word_list:</span><br><span class="line">        len_list.append(<span class="built_in">len</span>(word))</span><br><span class="line">    l = <span class="built_in">min</span>(len_list)</span><br><span class="line">    <span class="keyword">return</span> l <span class="comment"># l: shortest word length</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="010-Moving-Zeros-To-The-End"><a href="#010-Moving-Zeros-To-The-End" class="headerlink" title="010 Moving Zeros To The End"></a>010 Moving Zeros To The End</h3><p>Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">move_zeros([<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>]) <span class="comment"># returns [1, 1, 2, 1, 3, 0, 0]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">move_zeros</span>(<span class="params">lst</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sorted</span>(lst, key=<span class="keyword">lambda</span> x: x==<span class="number">0</span> <span class="keyword">and</span> <span class="built_in">type</span>(x) <span class="keyword">is</span> <span class="keyword">not</span> <span class="built_in">bool</span>)</span><br></pre></td></tr></table></figure>
+
+<p>匿名函数lambda：是指一类无需定义标识符（函数名）的函数或子程序</p>
+<h3 id="011-Duplicate-Encoder"><a href="#011-Duplicate-Encoder" class="headerlink" title="011 Duplicate Encoder"></a>011 Duplicate Encoder</h3><p>The goal of this exercise is to convert a string to a new string where each character in the new string is <code>&quot;(&quot;</code> if that character appears only once in the original string, or <code>&quot;)&quot;</code> if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.</p>
+<p><strong>Examples</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;din&quot;      =&gt;  &quot;(((&quot;</span><br><span class="line">&quot;recede&quot;   =&gt;  &quot;()()()&quot;</span><br><span class="line">&quot;Success&quot;  =&gt;  &quot;)())())&quot;</span><br><span class="line">&quot;(( @&quot;     =&gt;  &quot;))((&quot; </span><br></pre></td></tr></table></figure>
+
+<p><strong>Notes</strong></p>
+<p>Assertion messages may be unclear about what they display in some languages. If you read <code>&quot;...It Should encode XXX&quot;</code>, the <code>&quot;XXX&quot;</code> is the expected result, not the input!</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">duplicate_encode</span>(<span class="params">word</span>):</span></span><br><span class="line">    <span class="comment">#your code here</span></span><br><span class="line">    word = word.lower()</span><br><span class="line">    result = []</span><br><span class="line">    length = <span class="built_in">len</span>(word)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, length):</span><br><span class="line">        <span class="keyword">if</span> word.count(word[i]) &gt; <span class="number">1</span>:</span><br><span class="line">            result.append(<span class="string">&quot;)&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result.append(<span class="string">&quot;(&quot;</span>)</span><br><span class="line">    <span class="built_in">str</span> = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="built_in">str</span>.join(result))</span><br></pre></td></tr></table></figure>
+
+<p>还是使用了循环读取的老办法，使用了新的：</p>
+<p><code>str = &#39;&#39;     return (str.join(result))</code></p>
+<p>将列表转化为字符串，str里面是连接词。</p>
+<p>另外注意先.lower 转为小写</p>
+<p>大佬的解法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">duplicate_encode</span>(<span class="params">word</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join([<span class="string">&quot;(&quot;</span> <span class="keyword">if</span> word.lower().count(c) == <span class="number">1</span> <span class="keyword">else</span> <span class="string">&quot;)&quot;</span> <span class="keyword">for</span> c <span class="keyword">in</span> word.lower()])</span><br></pre></td></tr></table></figure>
+
+<p>嗯嗯嗯有点太长了转不过来</p>
+<h3 id="012-Delete-occurrences-of-an-element-if-it-occurs-more-than-n-times"><a href="#012-Delete-occurrences-of-an-element-if-it-occurs-more-than-n-times" class="headerlink" title="012 Delete occurrences of an element if it occurs more than n times"></a>012 Delete occurrences of an element if it occurs more than n times</h3><p><strong>Enough is enough!</strong></p>
+<p>Alice and Bob were on a holiday. Both of them took many pictures of the places they’ve been, and now they want to show Charlie their entire collection. However, Charlie doesn’t like these sessions, since the motif usually repeats. He isn’t fond of seeing the Eiffel tower 40 times.<br>He tells them that he will only sit for the session if they show the same motif at most <code>N</code> times. Luckily, Alice and Bob are able to encode the motif as a number. Can you help them to remove numbers such that their list contains each number only up to <code>N</code> times, without changing the order?</p>
+<p><strong>Task</strong></p>
+<p>Given a list and a number, create a new list that contains each number of <code>list</code> at most <code>N</code> times, without reordering.<br>For example if the input number is <code>2</code>, and the input list is <code>[1,2,3,1,2,1,2,3]</code>, you take <code>[1,2,3,1,2]</code>, drop the next <code>[1,2]</code> since this would lead to <code>1</code> and <code>2</code> being in the result <code>3</code> times, and then take <code>3</code>, which leads to <code>[1,2,3,1,2,3]</code>.<br>With list <code>[20,37,20,21]</code> and number <code>1</code>, the result would be <code>[20,37,21]</code>.</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete_nth</span>(<span class="params">order,max_e</span>):</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">0</span>,<span class="built_in">len</span>(order)):</span><br><span class="line">        <span class="keyword">if</span> result.count(order[i]) &lt; max_e:</span><br><span class="line">            result.append(order[i])</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>这个虽然做出来了但是总觉得条件那里应该是数量&lt;=max_e，但是用&lt;做出来才是正确的，为什么呢….</p>
+<p>.count 和 .append基本上能用上手了</p>
+<p>看了看大佬的解答似乎差不多，对于列表中的元素似乎可以直接用 <code>for o in order</code> 来依次点到</p>
+<h3 id="013-Consecutive-strings"><a href="#013-Consecutive-strings" class="headerlink" title="013 Consecutive strings"></a>013 Consecutive strings</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Concatenate the consecutive strings of strarr by <span class="number">2</span>, we get:</span><br><span class="line"></span><br><span class="line">treefoling   (length <span class="number">10</span>)  concatenation of strarr[<span class="number">0</span>] <span class="keyword">and</span> strarr[<span class="number">1</span>]</span><br><span class="line">folingtrashy (<span class="string">&quot;      12)  concatenation of strarr[1] and strarr[2]</span></span><br><span class="line"><span class="string">trashyblue   (&quot;</span>      <span class="number">10</span>)  concatenation of strarr[<span class="number">2</span>] <span class="keyword">and</span> strarr[<span class="number">3</span>]</span><br><span class="line">blueabcdef   (<span class="string">&quot;      10)  concatenation of strarr[3] and strarr[4]</span></span><br><span class="line"><span class="string">abcdefuvwxyz (&quot;</span>      <span class="number">12</span>)  concatenation of strarr[<span class="number">4</span>] <span class="keyword">and</span> strarr[<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">Two strings are the longest: <span class="string">&quot;folingtrashy&quot;</span> <span class="keyword">and</span> <span class="string">&quot;abcdefuvwxyz&quot;</span>.</span><br><span class="line">The first that came <span class="keyword">is</span> <span class="string">&quot;folingtrashy&quot;</span> so </span><br><span class="line">longest_consec(strarr, <span class="number">2</span>) should <span class="keyword">return</span> <span class="string">&quot;folingtrashy&quot;</span>.</span><br><span class="line"></span><br><span class="line">In the same way:</span><br><span class="line">longest_consec([&quot;zone&quot;, &quot;abigail&quot;, &quot;theta&quot;, &quot;form&quot;, &quot;libe&quot;, &quot;zas&quot;, &quot;theta&quot;, &quot;abigail&quot;], 2) --&gt; &quot;abigailtheta&quot;</span><br></pre></td></tr></table></figure>
+
+<p>n being the length of the string array, if <code>n = 0</code> or <code>k &gt; n</code> or <code>k &lt;= 0</code> return “” (return <code>Nothing</code> in Elm, “nothing” in Erlang).</p>
+<p><strong>Note</strong></p>
+<p>consecutive strings : follow one after another without an interruption</p>
+<p><strong>Solution</strong></p>
+<p>这题感觉好难，做了半个多小时都不对，放弃了。。。</p>
+<p>自己的解答：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longest_consec</span>(<span class="params">strarr, k</span>):</span></span><br><span class="line">    result = []</span><br><span class="line">    n = <span class="built_in">len</span>(strarr)</span><br><span class="line">    test = []</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span> <span class="keyword">or</span> k &gt; n <span class="keyword">or</span> k &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> (<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">0</span>,n):</span><br><span class="line">            a = strarr[i]</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span> (<span class="number">1</span>,k-<span class="number">1</span>):</span><br><span class="line">                a = a + strarr[(i+j)]</span><br><span class="line">            test.append(a)</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(test[i]) &gt; <span class="built_in">len</span>(test[i-<span class="number">1</span>]):</span><br><span class="line">                result = test[i]</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>合起来j的循环那里会出问题，还会有报错<code>list index out of range</code></p>
+<p>别人的解答：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longest_consec</span>(<span class="params">strarr, k</span>):</span></span><br><span class="line">    l=[]</span><br><span class="line">    <span class="keyword">if</span> k&gt;<span class="number">0</span> <span class="keyword">and</span> <span class="built_in">len</span>(strarr)&gt;=k:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(strarr)-(k-<span class="number">1</span>)):</span><br><span class="line">            m=<span class="string">&#x27;&#x27;</span>.join(strarr[i:i+k])</span><br><span class="line">            l.append(m)<span class="comment">#注意这种用法，别写成l=l.append(m)</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(l,key=<span class="built_in">len</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">         <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="014-PaginationHelper"><a href="#014-PaginationHelper" class="headerlink" title="014 PaginationHelper"></a>014 PaginationHelper</h3><p>For this exercise you will be strengthening your page-fu mastery. You will complete the PaginationHelper class, which is a utility class helpful for querying paging information related to an array.</p>
+<p>The class is designed to take in an array of values and an integer indicating how many items will be allowed per each page. The types of values contained within the collection/array are not relevant.</p>
+<p>The following are some examples of how this class is used:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">helper = PaginationHelper([<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;f&#x27;</span>], <span class="number">4</span>)</span><br><span class="line">helper.page_count() <span class="comment"># should == 2</span></span><br><span class="line">helper.item_count() <span class="comment"># should == 6</span></span><br><span class="line">helper.page_item_count(<span class="number">0</span>)  <span class="comment"># should == 4</span></span><br><span class="line">helper.page_item_count(<span class="number">1</span>) <span class="comment"># last page - should == 2</span></span><br><span class="line">helper.page_item_count(<span class="number">2</span>) <span class="comment"># should == -1 since the page is invalid</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># page_index takes an item index and returns the page that it belongs on</span></span><br><span class="line">helper.page_index(<span class="number">5</span>) <span class="comment"># should == 1 (zero based index)</span></span><br><span class="line">helper.page_index(<span class="number">2</span>) <span class="comment"># should == 0</span></span><br><span class="line">helper.page_index(<span class="number">20</span>) <span class="comment"># should == -1</span></span><br><span class="line">helper.page_index(-<span class="number">10</span>) <span class="comment"># should == -1 because negative indexes are invalid</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PaginationHelper</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># The constructor takes in an array of items and a integer indicating</span></span><br><span class="line">    <span class="comment"># how many items fit within a single page</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, collection, items_per_page</span>):</span></span><br><span class="line">        self.collection = collection</span><br><span class="line">        self.items_per_page = items_per_page</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># returns the number of items within the entire collection</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">item_count</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.collection)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># returns the number of pages</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page_count</span>(<span class="params">self</span>):</span></span><br><span class="line">        pages = self.item_count() // self.items_per_page + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> pages</span><br><span class="line"></span><br><span class="line">    <span class="comment"># returns the number of items on the current page. page_index is zero based</span></span><br><span class="line">    <span class="comment"># this method should return -1 for page_index values that are out of range</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page_item_count</span>(<span class="params">self, page_index</span>):</span></span><br><span class="line">        pages = self.page_count() - <span class="number">1</span></span><br><span class="line">        items = self.item_count()</span><br><span class="line">        <span class="keyword">if</span> page_index &gt; pages:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> page_index &lt; pages:</span><br><span class="line">            <span class="keyword">return</span> self.items_per_page</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> items % self.items_per_page</span><br><span class="line"></span><br><span class="line">    <span class="comment"># determines what page an item is on. Zero based indexes.</span></span><br><span class="line">    <span class="comment"># this method should return -1 for item_index values that are out of range</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">page_index</span>(<span class="params">self, item_index</span>):</span></span><br><span class="line">        pages = self.page_count() - <span class="number">1</span></span><br><span class="line">        items = self.item_count() - <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> item_index &gt; items <span class="keyword">or</span> item_index &lt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> item_index // self.items_per_page</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>姑且看别人的学习一些语法之后自己能独立写出思路来。第一次接触到一个函数class。</p>
+<p>在同一个class中使用self.xxx来调用之前的函数，依旧是逻辑题，注意在count时是否需要+1或-1</p>
+<h3 id="015-Human-Readable-Time（补0-amp-输出格式"><a href="#015-Human-Readable-Time（补0-amp-输出格式" class="headerlink" title="015 Human Readable Time（补0&amp;输出格式"></a>015 Human Readable Time（补0&amp;输出格式</h3><p>Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (<code>HH:MM:SS</code>)</p>
+<ul>
+<li><code>HH</code> = hours, padded to 2 digits, range: 00 - 99</li>
+<li><code>MM</code> = minutes, padded to 2 digits, range: 00 - 59</li>
+<li><code>SS</code> = seconds, padded to 2 digits, range: 00 - 59</li>
+</ul>
+<p>The maximum time never exceeds 359999 (<code>99:59:59</code>)</p>
+<p>You can find some examples in the test fixtures.</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_readable</span>(<span class="params">seconds</span>):</span></span><br><span class="line">    <span class="comment"># Do something</span></span><br><span class="line">    sec = <span class="number">0</span></span><br><span class="line">    <span class="built_in">min</span> = <span class="number">0</span></span><br><span class="line">    h = <span class="number">0</span></span><br><span class="line">    <span class="built_in">min</span> = seconds // <span class="number">60</span></span><br><span class="line">    sec = seconds % <span class="number">60</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">min</span> &gt;= <span class="number">60</span>:</span><br><span class="line">        h = <span class="built_in">min</span> // <span class="number">60</span></span><br><span class="line">        <span class="built_in">min</span> = <span class="built_in">min</span> % <span class="number">60</span></span><br><span class="line">    a = <span class="string">&quot;%02d&quot;</span> % h</span><br><span class="line">    b = <span class="string">&quot;%02d&quot;</span> % <span class="built_in">min</span></span><br><span class="line">    c = <span class="string">&quot;%02d&quot;</span> % sec</span><br><span class="line">    <span class="comment">#str = &#x27;:&#x27;</span></span><br><span class="line">    <span class="comment">#return (str.join(time))</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="string">&quot;%s:%s:%s&quot;</span> % (a,b,c))</span><br></pre></td></tr></table></figure>
+
+<p>本来是非常简单的问题，到了结果输出这里整的非常想死。。。本来想用：join连接结果一直有bug也查不出来是怎么改，干脆用了笨笨办法，应该是c的东西了吧。其他主要还用到了<code>a = &quot;%02d&quot; % h</code>在数字前面补0</p>
+<p>贴一下大佬的笔记↓↓↓</p>
+<p>python中有一个zfill方法用来给字符串前面补0，非常有用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n ``=` `<span class="string">&quot;123&quot;</span></span><br><span class="line">s ``=` `n.zfill(``<span class="number">5</span>``)</span><br><span class="line"><span class="keyword">assert</span>` `s ``=``=` `<span class="string">&quot;00123&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>zfill()也可以给负数补0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n ``=` `<span class="string">&quot;-123&quot;</span></span><br><span class="line">s ``=` `n.zfill(``<span class="number">5</span>``)</span><br><span class="line"><span class="keyword">assert</span>` `s ``=``=` `<span class="string">&quot;-0123&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>对于纯数字，我们也可以通过格式化的方式来补0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n ``=` `<span class="number">123</span></span><br><span class="line">s ``=` `<span class="string">&quot;%05d&quot;</span>` `%` `n</span><br><span class="line"><span class="keyword">assert</span>` `s ``=``=` `<span class="string">&quot;00123&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>好了最后来看看大佬的解法吧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_readable</span>(<span class="params">s</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#123;:02&#125;:&#123;:02&#125;:&#123;:02&#125;&#x27;</span>.<span class="built_in">format</span>(s / <span class="number">3600</span>, s / <span class="number">60</span> % <span class="number">60</span>, s % <span class="number">60</span>)</span><br></pre></td></tr></table></figure>
+
+<p>嗯嗯嗯简单到想死呢（）对啊我为什么不直接除3600（orz</p>
+<h3 id="016-RGB-To-Hex-Conversion"><a href="#016-RGB-To-Hex-Conversion" class="headerlink" title="016 RGB To Hex Conversion"></a>016 RGB To Hex Conversion</h3><p>The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.</p>
+<p>Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.</p>
+<p>The following are examples of expected output values:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rgb(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>) <span class="comment"># returns FFFFFF</span></span><br><span class="line">rgb(<span class="number">255</span>, <span class="number">255</span>, <span class="number">300</span>) <span class="comment"># returns FFFFFF</span></span><br><span class="line">rgb(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>) <span class="comment"># returns 000000</span></span><br><span class="line">rgb(<span class="number">148</span>, <span class="number">0</span>, <span class="number">211</span>) <span class="comment"># returns 9400D3</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rgb</span>(<span class="params">r, g, b</span>):</span></span><br><span class="line">    <span class="comment">#your code here :)</span></span><br><span class="line">    <span class="keyword">if</span> r &gt; <span class="number">255</span>:</span><br><span class="line">        r = <span class="number">255</span></span><br><span class="line">    <span class="keyword">if</span> r &lt; <span class="number">0</span>:</span><br><span class="line">        r = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> g &gt; <span class="number">255</span>:</span><br><span class="line">        g = <span class="number">255</span></span><br><span class="line">    <span class="keyword">if</span> g &lt; <span class="number">0</span>:</span><br><span class="line">        g = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> b &gt; <span class="number">255</span>:</span><br><span class="line">        b = <span class="number">255</span></span><br><span class="line">    <span class="keyword">if</span> b &lt; <span class="number">0</span>:</span><br><span class="line">        b = <span class="number">0</span></span><br><span class="line">    rr = <span class="built_in">hex</span>(r)[<span class="number">2</span>:]</span><br><span class="line">    gg = <span class="built_in">hex</span>(g)[<span class="number">2</span>:]</span><br><span class="line">    bb = <span class="built_in">hex</span>(b)[<span class="number">2</span>:]</span><br><span class="line">    result = rr.zfill(<span class="number">2</span>) + gg.zfill(<span class="number">2</span>) + bb.zfill(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> result.upper()</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+<p>前面的if还是笨笨的办法（），后面用到了新的hex（）将十进制转化为16进制，</p>
+<p>顺便贴一下其他进制转换的方法：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>十六进制 到 十进制</p>
+<p>int(‘0xf’,16)<br>→15</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>二进制 到 十进制</p>
+<p>int(‘10100111110’,2)<br>→1342</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>八进制 到 十进制</p>
+<p>int(‘17’,8)<br>→15</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>十进制 转 十六进制</p>
+<p>hex(1033)<br>→’0x409’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>二进制 转 十六进制</p>
+<p>hex(int(‘101010’,2))<br>→’0x2a’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>八进制到 十六进制</p>
+<p>hex(int(‘17’,8))<br>→’0xf’</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>转二进制则是用bin（），八进制用oct（）</p>
+<p>另外输出格式和补0还是烦恼了一会儿。</p>
+<p>看看大佬的解法吧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rgb</span>(<span class="params">r, g, b</span>):</span></span><br><span class="line">    <span class="built_in">round</span> = <span class="keyword">lambda</span> x: <span class="built_in">min</span>(<span class="number">255</span>, <span class="built_in">max</span>(x, <span class="number">0</span>))</span><br><span class="line">    <span class="keyword">return</span> (<span class="string">&quot;&#123;:02X&#125;&quot;</span> * <span class="number">3</span>).<span class="built_in">format</span>(<span class="built_in">round</span>(r), <span class="built_in">round</span>(g), <span class="built_in">round</span>(b))</span><br></pre></td></tr></table></figure>
+
+<p>lambda函数【lambda函数<strong>没有名字</strong>，是一种<strong>简单的</strong>、<strong>在同一行中定义函数</strong>的方法】说实话还是没看太明白，大概是执行单行中的命令的函数</p>
+<p>这个min max用的好聪明啊——</p>
+<p>后面输出用的.format是代替从前的%s这样的东西</p>
+<h3 id="017-Calculating-with-Functions"><a href="#017-Calculating-with-Functions" class="headerlink" title="017 Calculating with Functions"></a>017 Calculating with Functions</h3><p>This time we want to write calculations using functions and get the results. Let’s have a look at some examples:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">seven(times(five())) <span class="comment"># must return 35</span></span><br><span class="line">four(plus(nine())) <span class="comment"># must return 13</span></span><br><span class="line">eight(minus(three())) <span class="comment"># must return 5</span></span><br><span class="line">six(divided_by(two())) <span class="comment"># must return 3</span></span><br></pre></td></tr></table></figure>
+
+<p>Requirements:</p>
+<ul>
+<li>There must be a function for each number from 0 (“zero”) to 9 (“nine”)</li>
+<li>There must be a function for each of the following mathematical operations: plus, minus, times, divided_by</li>
+<li>Each calculation consist of exactly one operation and two numbers</li>
+<li>The most outer function represents the left operand, the most inner function represents the right operand</li>
+<li>Division should be <strong>integer division</strong>. For example, this should return <code>2</code>, not <code>2.666666...</code>:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zero</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">0</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">0</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">one</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">1</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">2</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">2</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">three</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">3</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">3</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">four</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">4</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">4</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">five</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">5</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">5</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">six</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">6</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">6</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">seven</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">7</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">7</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">eight</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">8</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">8</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">nine</span>(<span class="params">f = <span class="literal">None</span></span>):</span> <span class="keyword">return</span> <span class="number">9</span> <span class="keyword">if</span> <span class="keyword">not</span> f <span class="keyword">else</span> f(<span class="number">9</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plus</span>(<span class="params">y</span>):</span> <span class="keyword">return</span> <span class="keyword">lambda</span> x: x+y</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minus</span>(<span class="params">y</span>):</span> <span class="keyword">return</span> <span class="keyword">lambda</span> x: x-y</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">times</span>(<span class="params">y</span>):</span> <span class="keyword">return</span> <span class="keyword">lambda</span>  x: x*y</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divided_by</span>(<span class="params">y</span>):</span> <span class="keyword">return</span> <span class="keyword">lambda</span>  x: x // y</span><br></pre></td></tr></table></figure>
+
+<p>这题实在没头绪抄作业了（然后作业也还没怎么看懂）</p>
+<p>if not 用来判断变量是否为None；if not … else则与if 相反</p>
+<p>里面和外面还是搞不太懂。。。晕了</p>
+<h3 id="018-Count-IP-Addresses"><a href="#018-Count-IP-Addresses" class="headerlink" title="018 Count IP Addresses"></a>018 Count IP Addresses</h3><p>Implement a function that receives two IPv4 addresses, and returns the number of addresses between them (including the first one, excluding the last one).</p>
+<p>All inputs will be valid IPv4 addresses in the form of strings. The last address will always be greater than the first one.</p>
+<hr>
+<p><strong>Examples</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* With input &quot;10.0.0.0&quot;, &quot;10.0.0.50&quot;  =&gt; return   50 </span><br><span class="line">* With input &quot;10.0.0.0&quot;, &quot;10.0.1.0&quot;   =&gt; return  256 </span><br><span class="line">* With input &quot;20.0.0.10&quot;, &quot;20.0.1.0&quot;  =&gt; return  246</span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ips_between</span>(<span class="params">start, end</span>):</span></span><br><span class="line">    ss = start.split(<span class="string">&quot;.&quot;</span>, <span class="number">4</span>)</span><br><span class="line">    ee = end.split(<span class="string">&quot;.&quot;</span>, <span class="number">4</span>)</span><br><span class="line">    result = (<span class="built_in">int</span>(ee[<span class="number">0</span>]) - <span class="built_in">int</span>(ss[<span class="number">0</span>]))*(<span class="number">16777216</span>) + (<span class="built_in">int</span>(ee[<span class="number">1</span>]) - <span class="built_in">int</span>(ss[<span class="number">1</span>]))*(<span class="number">65536</span>) + (<span class="built_in">int</span>(ee[<span class="number">2</span>]) - <span class="built_in">int</span>(ss[<span class="number">2</span>]))*<span class="number">256</span> + (<span class="built_in">int</span>(ee[<span class="number">3</span>]) - <span class="built_in">int</span>(ss[<span class="number">3</span>]))</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>自己算是成功解出来了。主要在于split(“.”, 4)这里，前面是分割符号，后面是分割个数，但是分完之后每个元素是str属性，所以在下面计算的时候需要转为int，算式显得有点麻烦。</p>
+<p>另外有个小问题，算256的倍数的时候直接写（256^3）好像算出来不对，这是为什么呢。。。嗯嗯嗯好的查了一下发现次方运算符是**，而不是像c里面那样的^</p>
+<p>来看看大佬的解法吧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ipaddress <span class="keyword">import</span> ip_address</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ips_between</span>(<span class="params">start, end</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">int</span>(ip_address(end)) - <span class="built_in">int</span>(ip_address(start))</span><br></pre></td></tr></table></figure>
+
+<p>原来如此直接转int再减就好了吗！好吧</p>
+<p>用到了from import，好像是直接把整体模块对象引用过来。如果要一次导入所有可以引用的函数（有点难以理解），可以用 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+
+<p>这样的。</p>
+<h3 id="019-Greed-is-Good"><a href="#019-Greed-is-Good" class="headerlink" title="019 Greed is Good"></a>019 Greed is Good</h3><p>Greed is a dice game played with five six-sided dice. Your mission, should you choose to accept it, is to score a throw according to these rules. You will always be given an array with five six-sided dice values.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Three <span class="number">1</span><span class="string">&#x27;s =&gt; 1000 points</span></span><br><span class="line">Three 6&#x27;s =&gt;  600 points</span><br><span class="line">Three <span class="number">5</span><span class="string">&#x27;s =&gt;  500 points</span></span><br><span class="line">Three 4&#x27;s =&gt;  400 points</span><br><span class="line">Three <span class="number">3</span><span class="string">&#x27;s =&gt;  300 points</span></span><br><span class="line">Three 2&#x27;s =&gt;  200 points</span><br><span class="line">One   1   =&gt;  100 points</span><br><span class="line">One   5   =&gt;   50 point</span><br></pre></td></tr></table></figure>
+
+<p>A single die can only be counted once in each roll. For example, a given “5” can only count as part of a triplet (contributing to the 500 points) or as a single 50 points, but not both in the same roll.</p>
+<p>Example scoring</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Throw       Score</span><br><span class="line">---------   ------------------</span><br><span class="line"><span class="number">5</span> <span class="number">1</span> <span class="number">3</span> <span class="number">4</span> <span class="number">1</span>   <span class="number">250</span>:  <span class="number">50</span> (<span class="keyword">for</span> the <span class="number">5</span>) + <span class="number">2</span> * <span class="number">100</span> (<span class="keyword">for</span> the 1s)</span><br><span class="line"><span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">3</span> <span class="number">1</span>   <span class="number">1100</span>: <span class="number">1000</span> (<span class="keyword">for</span> three 1s) + <span class="number">100</span> (<span class="keyword">for</span> the other <span class="number">1</span>)</span><br><span class="line"><span class="number">2</span> <span class="number">4</span> <span class="number">4</span> <span class="number">5</span> <span class="number">4</span>   <span class="number">450</span>:  <span class="number">400</span> (<span class="keyword">for</span> three 4s) + <span class="number">50</span> (<span class="keyword">for</span> the <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>In some languages, it is possible to mutate the input to the function. This is something that you should never do. If you mutate the input, you will not be able to pass all the tests.</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">score</span>(<span class="params">dice</span>):</span></span><br><span class="line">    score = <span class="number">0</span></span><br><span class="line">    n = <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">7</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> n:</span><br><span class="line">        <span class="keyword">if</span> dice.count(i) &gt;= <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">                score = i*<span class="number">1000</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                score = i*<span class="number">100</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span> &lt; dice.count(<span class="number">1</span>) &lt;<span class="number">3</span>:</span><br><span class="line">        score += dice.count(<span class="number">1</span>)*<span class="number">100</span></span><br><span class="line">    <span class="keyword">elif</span> dice.count(<span class="number">1</span>) &gt; <span class="number">3</span>:</span><br><span class="line">        score += (dice.count(<span class="number">1</span>)-<span class="number">3</span>)*<span class="number">100</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span> &lt; dice.count(<span class="number">5</span>) &lt;<span class="number">3</span>:</span><br><span class="line">        score += dice.count(<span class="number">5</span>)*<span class="number">50</span></span><br><span class="line">    <span class="keyword">elif</span> dice.count(<span class="number">5</span>) &gt; <span class="number">3</span>:</span><br><span class="line">        score += (dice.count(<span class="number">5</span>)-<span class="number">3</span>)*<span class="number">50</span></span><br><span class="line">    <span class="keyword">return</span> score</span><br></pre></td></tr></table></figure>
+
+<p>这个是自己的解答，但是总是有哪里少加了一点不太对，也不知道是哪里不对</p>
+<p>恩恩额想不出来哪里错了可恶——有两个少了1000但是我觉得前面3个1那里应该没问题啊多洗爹</p>
+<p>好的我知道了前面的3个加分那里应该把<code>if dice.count(i) == 3:</code>改成<code>if dice.count(i) &gt;= 3:</code>就好了，好吧（后面改好了）</p>
+<p>一开始前面还是用的一个一个if的笨办法，后面稍微改了一下用上了循环，后面还是稍微有点繁琐</p>
+<p>还是来看看大佬的解法吧</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">score</span>(<span class="params">dice</span>):</span> </span><br><span class="line">  <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">  counter = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">  points = [<span class="number">1000</span>, <span class="number">200</span>, <span class="number">300</span>, <span class="number">400</span>, <span class="number">500</span>, <span class="number">600</span>]</span><br><span class="line">  extra = [<span class="number">100</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span>,<span class="number">0</span>]</span><br><span class="line">  <span class="keyword">for</span> die <span class="keyword">in</span> dice: </span><br><span class="line">    counter[die-<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> (i, count) <span class="keyword">in</span> <span class="built_in">enumerate</span>(counter):</span><br><span class="line">    <span class="built_in">sum</span> += (points[i] <span class="keyword">if</span> count &gt;= <span class="number">3</span> <span class="keyword">else</span> <span class="number">0</span>) + extra[i] * (count%<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">sum</span> </span><br></pre></td></tr></table></figure>
+
+<p>用到了enumerate（枚举），在<code>for (i, count) in enumerate(counter):</code>中即表示同时列举i（项数）与count（元素值）。虽然具体用法看起来还是很复杂orz</p>
+<p>还聪明的用了取余数</p>
+<h3 id="020-Rot13"><a href="#020-Rot13" class="headerlink" title="020 Rot13"></a>020 Rot13</h3><p>ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet. ROT13 is an example of the Caesar cipher.</p>
+<p>Create a function that takes a string and returns the string ciphered with Rot13. If there are numbers or special characters included in the string, they should be returned as they are. Only letters from the latin/english alphabet should be shifted, like in the original Rot13 “implementation”.</p>
+<p>Please note that using <code>encode</code> is considered cheating.</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rot13</span>(<span class="params">message</span>):</span></span><br><span class="line">    result = <span class="built_in">str</span>()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(message)):</span><br><span class="line">        coun = <span class="built_in">ord</span>(message[i])</span><br><span class="line">        <span class="keyword">if</span> <span class="number">65</span> &lt;= coun &lt;= <span class="number">77</span> <span class="keyword">or</span> <span class="number">97</span> &lt;= coun &lt;= <span class="number">109</span>:</span><br><span class="line">            result = result + <span class="built_in">chr</span>(coun+<span class="number">13</span>)</span><br><span class="line">        <span class="keyword">elif</span> <span class="number">78</span> &lt;= coun &lt;= <span class="number">90</span> <span class="keyword">or</span> <span class="number">110</span> &lt;= coun &lt;= <span class="number">122</span>:</span><br><span class="line">            result = result + <span class="built_in">chr</span>(coun-<span class="number">13</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result = result + message[i]</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<img src="/2022/08/11/codewars-python%E7%BB%83%E4%B9%A0%E7%AC%94%E8%AE%B0/0801-figure1.png" alt=" " style="zoom:100%;">
+
+<p>附一个ASCII表</p>
+<p>这题还算简单，考虑+13-13和不变的三类就ok</p>
+<h3 id="021-Who-likes-it"><a href="#021-Who-likes-it" class="headerlink" title="021 Who likes it?"></a>021 Who likes it?</h3><p>You probably know the “like” system from Facebook and other pages. People can “like” blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.</p>
+<p>Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[]                                --&gt;  &quot;no one likes this&quot;</span><br><span class="line">[&quot;Peter&quot;]                         --&gt;  &quot;Peter likes this&quot;</span><br><span class="line">[&quot;Jacob&quot;, &quot;Alex&quot;]                 --&gt;  &quot;Jacob and Alex like this&quot;</span><br><span class="line">[&quot;Max&quot;, &quot;John&quot;, &quot;Mark&quot;]           --&gt;  &quot;Max, John and Mark like this&quot;</span><br><span class="line">[&quot;Alex&quot;, &quot;Jacob&quot;, &quot;Mark&quot;, &quot;Max&quot;]  --&gt;  &quot;Alex, Jacob and 2 others like this&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Note: For 4 or more names, the number in <code>&quot;and 2 others&quot;</code> simply increases.</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">likes</span>(<span class="params">names</span>):</span></span><br><span class="line">    <span class="keyword">if</span> names == []:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;no one likes this&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(names) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;%s likes this&quot;</span> % names[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(names) == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;%s and %s like this&quot;</span> % (names[<span class="number">0</span>], names[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(names) == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;%s, %s and %s like this&quot;</span> % (names[<span class="number">0</span>], names[<span class="number">1</span>], names[<span class="number">2</span>])</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(names) &gt; <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;%s, %s and %d others like this&quot;</span> % (names[<span class="number">0</span>], names[<span class="number">1</span>], <span class="built_in">len</span>(names) - <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这题蛮顺利的自己写出来了，还挺有趣的功能。还是用了%s和%d</p>
+<p>看看大佬的解法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">likes</span>(<span class="params">names</span>):</span></span><br><span class="line">    n = <span class="built_in">len</span>(names)</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="number">0</span>: <span class="string">&#x27;no one likes this&#x27;</span>,</span><br><span class="line">        <span class="number">1</span>: <span class="string">&#x27;&#123;&#125; likes this&#x27;</span>, </span><br><span class="line">        <span class="number">2</span>: <span class="string">&#x27;&#123;&#125; and &#123;&#125; like this&#x27;</span>, </span><br><span class="line">        <span class="number">3</span>: <span class="string">&#x27;&#123;&#125;, &#123;&#125; and &#123;&#125; like this&#x27;</span>, </span><br><span class="line">        <span class="number">4</span>: <span class="string">&#x27;&#123;&#125;, &#123;&#125; and &#123;others&#125; others like this&#x27;</span></span><br><span class="line">    &#125;[<span class="built_in">min</span>(<span class="number">4</span>, n)].<span class="built_in">format</span>(*names[:<span class="number">3</span>], others=n-<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>使用了.format，看起来很清楚简洁！下次试试</p>
+<p>（之前刷了点简单的题没记录，后面遇到有趣的或者比较难的再记录吧</p>
+<h3 id="022-Two-to-One"><a href="#022-Two-to-One" class="headerlink" title="022 Two to One"></a>022 Two to One</h3><p>Take 2 strings <code>s1</code> and <code>s2</code> including only letters from <code>a</code> to <code>z</code>. Return a new <strong>sorted</strong> string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.</p>
+<h4 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;xyaabbbccccdefww&quot;</span></span><br><span class="line">b = <span class="string">&quot;xxxxyyyyabklmopq&quot;</span></span><br><span class="line">longest(a, b) -&gt; &quot;abcdefklmopqwxy&quot;</span><br><span class="line"></span><br><span class="line">a = <span class="string">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span></span><br><span class="line">longest(a, a) -&gt; &quot;abcdefghijklmnopqrstuvwxyz&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longest</span>(<span class="params">a1, a2</span>):</span></span><br><span class="line">    result = <span class="built_in">str</span>()</span><br><span class="line">    a = a1 + a2</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">97</span>,<span class="number">123</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(a)):</span><br><span class="line">            <span class="keyword">if</span> a[j] == <span class="built_in">chr</span>(i):</span><br><span class="line">                <span class="keyword">if</span> result.count(<span class="built_in">chr</span>(i)) == <span class="number">0</span>:</span><br><span class="line">                    result += <span class="built_in">chr</span>(i)</span><br><span class="line">            <span class="keyword">else</span>: <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>这题开始在思路上还苦恼了一下</p>
+<p>看看大佬的解法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longest</span>(<span class="params">a1, a2</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(<span class="built_in">sorted</span>(<span class="built_in">set</span>(a1 + a2)))</span><br></pre></td></tr></table></figure>
+
+<p>set()创建无序不重复元素集</p>
+<p>sorted()对列表、集合、字符串等等进行排序，升序为默认(False)，可改成降序(True)，最后join一下</p>
+<h3 id="023-List-Filtering"><a href="#023-List-Filtering" class="headerlink" title="023 List Filtering"></a>023 List Filtering</h3><p>In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filter_list([<span class="number">1</span>,<span class="number">2</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]) == [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">filter_list([<span class="number">1</span>,<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="number">0</span>,<span class="number">15</span>]) == [<span class="number">1</span>,<span class="number">0</span>,<span class="number">15</span>]</span><br><span class="line">filter_list([<span class="number">1</span>,<span class="number">2</span>,<span class="string">&#x27;aasf&#x27;</span>,<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;123&#x27;</span>,<span class="number">123</span>]) == [<span class="number">1</span>,<span class="number">2</span>,<span class="number">123</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filter_list</span>(<span class="params">l</span>):</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(l)):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">isinstance</span>(l[i],<span class="built_in">int</span>) &gt; <span class="number">0</span>:</span><br><span class="line">            result.append(l[i])</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>用到了新学的判断数据类型的函数 isinstance(a,(str,int,list))</p>
+<h3 id="024-Your-order-please"><a href="#024-Your-order-please" class="headerlink" title="024 Your order, please"></a>024 Your order, please</h3><p>Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.</p>
+<p>Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).</p>
+<p>If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.</p>
+<h2 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples"></a>Examples</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;is2 Thi1s T4est 3a&quot;  --&gt;  &quot;Thi1s is2 3a T4est&quot;</span><br><span class="line">&quot;4of Fo1r pe6ople g3ood th5e the2&quot;  --&gt;  &quot;Fo1r the2 g3ood 4of th5e pe6ople&quot;</span><br><span class="line">&quot;&quot;  --&gt;  &quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">order</span>(<span class="params">sentence</span>):</span></span><br><span class="line">    a = sentence.split()</span><br><span class="line">    count = <span class="number">1</span></span><br><span class="line">    b = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(a)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> a:</span><br><span class="line">            <span class="keyword">for</span> n <span class="keyword">in</span> j:</span><br><span class="line">                <span class="keyword">if</span> n == <span class="built_in">str</span>(i+<span class="number">1</span>):</span><br><span class="line">                    b.append(j)</span><br><span class="line">    result = <span class="built_in">str</span>()</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> b:</span><br><span class="line">        result += x</span><br><span class="line">        result += <span class="string">&quot; &quot;</span></span><br><span class="line">    <span class="keyword">return</span> result[<span class="number">0</span>:(<span class="built_in">len</span>(result)-<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>这题自己苦恼了很久最后还是做出来了，虽然感觉是比较笨的办法应该绕了点弯路。一共叠了三层循环。最开始是把 for i in a 放在最外面的，后面发现这样的话，如果位置在前面的项不是1、2之类的话，就会直接被跳过，后面输出的时候就没有3、4了。于是乎改成循环从寻找1开始，每次都从a的开头开始找，虽然有些笨重但是好歹没错。</p>
+<p>另外在比较条件的时候需要 if n == str(i+1) ，没有加str的话做出来是空的。。。</p>
+<p>看了大佬们的解法，有一个用了lambda就不提了，比较关注的是用了下面这个的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">str</span>(i) <span class="keyword">in</span> item:</span><br><span class="line">	result.append(item)</span><br></pre></td></tr></table></figure>
+
+<p>if 这个数字在字符串里面，学到了新的判断方式（大拇指</p>
+<h3 id="025-Stack-cans-into-pyramids"><a href="#025-Stack-cans-into-pyramids" class="headerlink" title="025 Stack cans into pyramids"></a>025 Stack cans into pyramids</h3><p>In this kata you will be solving a problem of a store worker that specializes in stacking cans in pyramid shapes in stores, he only makes a pyramid with square bases and always puts a can on top of other 4 cans his problem is that sometimes does not get exact amount so he has to either buy more or return some. (He will do what is easier)</p>
+<p>Your task is to calculate the number he will return or buy.</p>
+<p>Example: 3 cans -&gt; 1 can or 5 cans (1-4) both result are same distance so he will return or buy 2</p>
+<p>10 cans -&gt; 5 cans (1-4) or 14 cans (1-4-9) he will return 4 cans since 14 is closer to 10</p>
+<p>As our worker is really dedicated he can obtain up to 1 +15e cans</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">perfect_pyramid</span>(<span class="params">cans</span>):</span></span><br><span class="line">    c = cans</span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> c &gt; <span class="number">0</span>:</span><br><span class="line">        c -= a**<span class="number">2</span></span><br><span class="line">        a += <span class="number">1</span></span><br><span class="line">    a -= <span class="number">1</span></span><br><span class="line">    c += a**<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> c &gt; (a**<span class="number">2</span>-c):</span><br><span class="line">        <span class="keyword">return</span> (a**<span class="number">2</span>-c)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> c</span><br></pre></td></tr></table></figure>
+
+<p>这个beta题还做了挺久。循环思考起来稍微有点复杂，一开始还引入了sum来计算平方和，后面发现这样挨个减掉之后并用不上orz</p>
+<p>不确定怎么解决的时候就先整几个参数然后调出来看看是啥吧，说不定就发现解法了（</p>
+<h3 id="026-Decode-the-Morse-code"><a href="#026-Decode-the-Morse-code" class="headerlink" title="026 Decode the Morse code"></a>026 Decode the Morse code</h3><p>In this kata you have to write a simple <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Morse_code">Morse code</a> decoder. While the Morse code is now mostly superseded by voice and digital data communication channels, it still has its use in some applications around the world.</p>
+<p>The Morse code encodes every character as a sequence of “dots” and “dashes”. For example, the letter <code>A</code> is coded as <code>·−</code>, letter <code>Q</code> is coded as <code>−−·−</code>, and digit <code>1</code> is coded as <code>·−−−−</code>. The Morse code is case-insensitive, traditionally capital letters are used. When the message is written in Morse code, a single space is used to separate the character codes and 3 spaces are used to separate words. For example, the message <code>HEY JUDE</code> in Morse code is <code>···· · −·−−  ·−−− ··− −·· ·</code>.</p>
+<p><strong>NOTE:</strong> Extra spaces before or after the code have no meaning and should be ignored.</p>
+<p>In addition to letters, digits and some punctuation, there are some special service codes, the most notorious of those is the international distress signal <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/SOS">SOS</a> (that was first issued by <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/RMS_Titanic">Titanic</a>), that is coded as <code>···−−−···</code>. These special codes are treated as single special characters, and usually are transmitted as separate words.</p>
+<p>Your task is to implement a function that would take the morse code as input and return a decoded human-readable string.</p>
+<p>For example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">decode_morse(<span class="string">&#x27;.... . -.--   .--- ..- -.. .&#x27;</span>)</span><br><span class="line"><span class="comment">#should return &quot;HEY JUDE&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>NOTE:</strong> For coding purposes you have to use ASCII characters <code>.</code> and <code>-</code>, not Unicode characters.</p>
+<p>The Morse code table is preloaded for you as a dictionary, feel free to use it:</p>
+<ul>
+<li><p>Coffeescript/C++/Go/JavaScript/Julia/PHP/Python/Ruby/TypeScript: <code>MORSE_CODE[&#39;.--&#39;]</code></p>
+</li>
+<li><p>C#: <code>MorseCode.Get(&quot;.--&quot;)</code> (returns <code>string</code>)</p>
+</li>
+<li><p>F#: <code>MorseCode.get &quot;.--&quot;</code> (returns <code>string</code>)</p>
+</li>
+<li><p>Elixir: <code>@morse_codes</code> variable (from <code>use MorseCode.Constants</code>). Ignore the unused variable warning for <code>morse_codes</code> because it’s no longer used and kept only for old solutions.</p>
+</li>
+<li><p>Elm: <code>MorseCodes.get : Dict String String</code></p>
+</li>
+<li><p>Haskell: <code>morseCodes ! &quot;.--&quot;</code> (Codes are in a <code>Map String String</code>)</p>
+</li>
+<li><p>Java: <code>MorseCode.get(&quot;.--&quot;)</code></p>
+</li>
+<li><p>Kotlin: <code>MorseCode[&quot;.--&quot;] ?: &quot;&quot;</code> or <code>MorseCode.getOrDefault(&quot;.--&quot;, &quot;&quot;)</code></p>
+</li>
+<li><p>Racket: <code>morse-code</code> (a hash table)</p>
+</li>
+<li><p>Rust: <code>MORSE_CODE</code></p>
+</li>
+<li><p>Scala: <code>morseCodes(&quot;.--&quot;)</code></p>
+</li>
+<li><p>Swift: <code>MorseCode[&quot;.--&quot;] ?? &quot;&quot;</code> or <code>MorseCode[&quot;.--&quot;, default: &quot;&quot;]</code></p>
+</li>
+<li><p>C: provides parallel arrays, i.e. <code>morse[2] == &quot;-.-&quot;</code> for <code>ascii[2] == &quot;C&quot;</code></p>
+</li>
+<li><p>NASM: a table of pointers to the morsecodes, and a corresponding list of ascii symbols</p>
+</li>
+</ul>
+<p>All the test strings would contain valid Morse code, so you may skip checking for errors and exceptions. In C#, tests will fail if the solution code throws an exception, please keep that in mind. This is mostly because otherwise the engine would simply ignore the tests, resulting in a “valid” solution.</p>
+<p>Good luck!</p>
+<p><strong>Solution</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decode_morse</span>(<span class="params">morse_code</span>):</span></span><br><span class="line">    a = morse_code.lstrip().rstrip()</span><br><span class="line">    re = a.split(<span class="string">&quot;   &quot;</span>)</span><br><span class="line">    all_split = []</span><br><span class="line">    word = ()</span><br><span class="line">    sen = <span class="built_in">str</span>()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> re:</span><br><span class="line">        all_split.append(i.split(<span class="string">&quot; &quot;</span>))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> all_split:</span><br><span class="line">        word = <span class="built_in">str</span>()</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> i:</span><br><span class="line">            word += MORSE_CODE[j]</span><br><span class="line">        sen += word + <span class="string">&#x27; &#x27;</span></span><br><span class="line">    <span class="keyword">return</span> sen[<span class="number">0</span>:(<span class="built_in">len</span>(sen)-<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>摩斯电码解码！酷酷</p>
+<p>开始有点小问题，因为忘记了第一步的去掉左右空格，后面倒是没什么大问题</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/07/%E5%A5%BD%E4%B9%85%E4%B8%8D%E8%A7%81%E4%B8%8E%E5%86%8D%E8%A7%81%E4%B8%8E%E4%B8%80%E8%B7%AF%E9%A1%BA%E9%A3%8E/" rel="prev" title="好久不见与再见与一路顺风">
+      <i class="fa fa-chevron-left"></i> 好久不见与再见与一路顺风
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/14/%E6%9D%A5%E4%BA%AC%E4%B8%80%E6%9C%88%E8%AE%B0%E2%80%94%E2%80%94%E4%B8%8E%E8%99%AB%E8%99%AB%E5%85%B1%E8%88%9E/" rel="next" title="来京一月记——与虫虫共舞">
+      来京一月记——与虫虫共舞 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+    <!--网易云插件-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=39227591&auto=1&height=66"></iframe>
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#001-%E8%BF%AD%E4%BB%A3-%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">001 迭代+条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#002-Exes-and-Ohs"><span class="nav-number">2.</span> <span class="nav-text">002 Exes and Ohs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#003-Sum-of-odd-numbers"><span class="nav-number">3.</span> <span class="nav-text">003 Sum of odd numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#004-Find-the-missing-letter"><span class="nav-number">4.</span> <span class="nav-text">004 Find the missing letter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#005-Multiples-of-3-or-5"><span class="nav-number">5.</span> <span class="nav-text">005 Multiples of 3 or 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#006-String-ends-with"><span class="nav-number">6.</span> <span class="nav-text">006 String ends with?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#007-Bit-Counting"><span class="nav-number">7.</span> <span class="nav-text">007 Bit Counting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#008-Sum-of-two-lowest-positive-integers"><span class="nav-number">8.</span> <span class="nav-text">008 Sum of two lowest positive integers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#009-Shortest-Word"><span class="nav-number">9.</span> <span class="nav-text">009 Shortest Word</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#010-Moving-Zeros-To-The-End"><span class="nav-number">10.</span> <span class="nav-text">010 Moving Zeros To The End</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#011-Duplicate-Encoder"><span class="nav-number">11.</span> <span class="nav-text">011 Duplicate Encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#012-Delete-occurrences-of-an-element-if-it-occurs-more-than-n-times"><span class="nav-number">12.</span> <span class="nav-text">012 Delete occurrences of an element if it occurs more than n times</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#013-Consecutive-strings"><span class="nav-number">13.</span> <span class="nav-text">013 Consecutive strings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#014-PaginationHelper"><span class="nav-number">14.</span> <span class="nav-text">014 PaginationHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#015-Human-Readable-Time%EF%BC%88%E8%A1%A50-amp-%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">15.</span> <span class="nav-text">015 Human Readable Time（补0&amp;输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#016-RGB-To-Hex-Conversion"><span class="nav-number">16.</span> <span class="nav-text">016 RGB To Hex Conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#017-Calculating-with-Functions"><span class="nav-number">17.</span> <span class="nav-text">017 Calculating with Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#018-Count-IP-Addresses"><span class="nav-number">18.</span> <span class="nav-text">018 Count IP Addresses</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#019-Greed-is-Good"><span class="nav-number">19.</span> <span class="nav-text">019 Greed is Good</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#020-Rot13"><span class="nav-number">20.</span> <span class="nav-text">020 Rot13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#021-Who-likes-it"><span class="nav-number">21.</span> <span class="nav-text">021 Who likes it?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#022-Two-to-One"><span class="nav-number">22.</span> <span class="nav-text">022 Two to One</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Examples"><span class="nav-number">22.1.</span> <span class="nav-text">Examples:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#023-List-Filtering"><span class="nav-number">23.</span> <span class="nav-text">023 List Filtering</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">24.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#024-Your-order-please"><span class="nav-number">25.</span> <span class="nav-text">024 Your order, please</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples-1"><span class="nav-number"></span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#025-Stack-cans-into-pyramids"><span class="nav-number">1.</span> <span class="nav-text">025 Stack cans into pyramids</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#026-Decode-the-Morse-code"><span class="nav-number">2.</span> <span class="nav-text">026 Decode the Morse code</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="brutal"
+      src="/images/avatar_2.gif">
+  <p class="site-author-name" itemprop="name">brutal</p>
+  <div class="site-description" itemprop="description">希望明天是个好天气。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:dbrutal588@gmail.com" title="E-Mail → mailto:dbrutal588@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Brutal588" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Brutal588" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">brutal</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="Symbols count total">63k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">58 mins.</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("02/28/2021 22:30:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "这间狗屋已经搭好 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">这里挤满了38.8k只小猫</span>
+</div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'aKu1cNLC00MOtgwcgOlh3lL1-gzGzoHsz',
+      appKey     : '2CmjnXT0NVnkzGn89pCYEXL3',
+      placeholder: "来发条comment吧 :D\n请填写昵称和email以便收到邮件通知 owo",
+      avatar     : 'mp',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>
