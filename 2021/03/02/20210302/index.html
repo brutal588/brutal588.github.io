@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"brutal588.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"brutal588.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="这篇文章是主题优化的记录，将会持续更新。（主要记录改动哪个文件以备后用，从各处搜刮来的代码，就暂不附上了）">
@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://brutal588.github.io/2021/03/02/20210302/exhausted....GIF">
 <meta property="article:published_time" content="2021-03-02T08:27:07.000Z">
-<meta property="article:modified_time" content="2024-04-29T06:26:50.149Z">
+<meta property="article:modified_time" content="2024-06-04T01:09:17.092Z">
 <meta property="article:author" content="brutal">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -148,6 +148,11 @@
     <a href="/links/" rel="section"><i class="fa fa-link fa-fw"></i>Friend links</a>
 
   </li>
+        <li class="menu-item menu-item-digital-product">
+
+    <a href="/product/" rel="section"><i class="fa fa-coffee fa-fw"></i>Digital product</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -233,7 +238,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-04-29 14:26:50" itemprop="dateModified" datetime="2024-04-29T14:26:50+08:00">2024-04-29</time>
+                <time title="Modified: 2024-06-04 09:09:17" itemprop="dateModified" datetime="2024-06-04T09:09:17+08:00">2024-06-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,14 +270,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>3.2k</span>
+              <span>3.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>3 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -292,20 +297,21 @@
 
 
 <h1 id="20210302"><a href="#20210302" class="headerlink" title="20210302"></a>20210302</h1><p>今天尝试了更多的东西，也遇到了一些麻烦，目前姑且做出了比较满意的效果。记录一下今天添加的改动。</p>
-<h2 id="网页icon"><a href="#网页icon" class="headerlink" title="网页icon"></a>网页icon</h2><p>找参考画了狗屋的图片，设置为透明背景的png（第一次弄错成jpg了会有白底…）,图像尽量充满画布，在网上进行png→icon的转换，保存到主题/source/images下，在主题配置文件中favicon部分修改成制作好的icon的名字即可。</p>
-<h2 id="网页背景图片、文章阴影、博客内容透明化等"><a href="#网页背景图片、文章阴影、博客内容透明化等" class="headerlink" title="网页背景图片、文章阴影、博客内容透明化等"></a>网页背景图片、文章阴影、博客内容透明化等</h2><p>均在blog/source/_data下的styles.styl中进行，将代码添加进去修改调整即可。还没有完全弄懂这几个应该怎么调整…</p>
+<h2 id="网页icon"><a href="#网页icon" class="headerlink" title="网页icon"></a>网页icon</h2><p>找参考画了狗屋的图片，设置为透明背景的png（第一次弄错成jpg了会有白底…）,图像尽量充满画布，在网上进行png→icon的转换，保存到主题<code>/source/images</code>下，在主题配置文件中favicon部分修改成制作好的icon的名字即可。</p>
+<h2 id="网页背景图片、文章阴影、博客内容透明化等"><a href="#网页背景图片、文章阴影、博客内容透明化等" class="headerlink" title="网页背景图片、文章阴影、博客内容透明化等"></a>网页背景图片、文章阴影、博客内容透明化等</h2><p>均在<code>blog/source/_data</code>下的styles.styl中进行，将代码添加进去修改调整即可。还没有完全弄懂这几个应该怎么调整…</p>
 <h2 id="圆角设置"><a href="#圆角设置" class="headerlink" title="圆角设置"></a>圆角设置</h2><p>在variables.styl中添加相应代码，在主题配置文件中取消variables.styl的注释即可。</p>
-<h2 id="页脚的网站建立时间记录"><a href="#页脚的网站建立时间记录" class="headerlink" title="页脚的网站建立时间记录"></a>页脚的网站建立时间记录</h2><p>在主题/layout/_particals下的footer.swig中加入相应代码，修改时间为建站时间（”月月/日日/年年年年 xx:xx:xx”）。也有在data文件夹下新建footer.swig的方法，最后两种都改了，不知道是哪种在起作用…</p>
+<h2 id="页脚的网站建立时间记录"><a href="#页脚的网站建立时间记录" class="headerlink" title="页脚的网站建立时间记录"></a>页脚的网站建立时间记录</h2><p>在<code>next/layout/_particals</code>下的footer.swig中加入相应代码，修改时间为建站时间（”月月/日日/年年年年 xx:xx:xx”）。也有在data文件夹下新建footer.swig的方法，最后两种都改了，不知道是哪种在起作用…</p>
 <p>这一步的时候遇到了一些问题，在hexo g的时候总是报错，然后在hexo s时出现</p>
-<p>template render error: (d:\blog\themes\next\layout\inject\footer\custom.swig) [line 60, column 15]</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">template render error: (d:\blog\themes\next\layout\inject\footer\custom.swig) [line <span class="number">60</span>, column <span class="number">15</span>]</span><br></pre></td></tr></table></figure>
+
 <p>一类的错误提示，后面整来整去不知道怎么回事最后终于可以正常显示了…</p>
-<h2 id="调整文字大小"><a href="#调整文字大小" class="headerlink" title="调整文字大小"></a>调整文字大小</h2><p>在主题/source/css/_variables下的base.styl中修改// Font size，大致弄得比较舒服了。</p>
+<h2 id="调整文字大小"><a href="#调整文字大小" class="headerlink" title="调整文字大小"></a>调整文字大小</h2><p>在主题<code>/source/css/_variables</code>下的base.styl中修改// Font size，大致弄得比较舒服了。</p>
 <h2 id="添加了点击查看图片的插件"><a href="#添加了点击查看图片的插件" class="headerlink" title="添加了点击查看图片的插件"></a>添加了点击查看图片的插件</h2><p>直接下载插件即可。（这里因为内容页面设置了整体的透明度&lt;1，所以在显示图片的时候会有背景透出来，或者该说是整张图片的颜色变淡？或许还是调回1比较好呢…）</p>
 <hr>
 <p>鼠标特效、打字特效、动态背景等等没有尝试，或许以后心血来潮会弄一下吧…</p>
 <p>还想要改进的地方：圆角设置之后菜单栏背后还是会有方形框，不知道是什么原因造成的…</p>
 <h1 id="20210303更新"><a href="#20210303更新" class="headerlink" title="20210303更新"></a>20210303更新</h1><h2 id="背景透明化"><a href="#背景透明化" class="headerlink" title="背景透明化"></a>背景透明化</h2><p>将之前弄的干掉了。重新设置了在主题/source/css/相应scheme下的index.styl中修改background 的数据，可以调整背景透明度（虽然由于跟教程上的操作不太一样，我好像没有看到什么效果？）。</p>
-<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>新增links的page，在根目录/source/links下的index.md中添加代码，然后在styles.styl中添加个性化设置的代码（调整各种颜色，头像旋转等），在_data下新建links.yml文件，添加友链的具体内容（name, avatar, site, info ），最后在主题配置文件中menu下增加Friend links即可。</p>
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>新增links的page，在根目录<code>/source/links</code>下的index.md中添加代码，然后在styles.styl中添加个性化设置的代码（调整各种颜色，头像旋转等），在_data下新建links.yml文件，添加友链的具体内容（name, avatar, site, info ），最后在主题配置文件中menu下增加Friend links即可。</p>
 <p>参考<a target="_blank" rel="noopener" href="https://geniucker.now.sh/2020/04/25/Hexo-NexT%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/">Geniucker的文章</a>，感谢。</p>
 <h2 id="valine评论功能"><a href="#valine评论功能" class="headerlink" title="valine评论功能"></a>valine评论功能</h2><p>1、注册Leancloud账号，一系列设置</p>
 <p>2、在主题配置文件中comments下active: 设置为valine，在valine栏下打开，填入appid、appkey，进行具体设置（读取qq信息的功能暂未开启）。</p>
@@ -313,7 +319,7 @@
 <p>参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/257707609">Vince的文章</a>，感谢。</p>
 <h1 id="20210314更新"><a href="#20210314更新" class="headerlink" title="20210314更新"></a>20210314更新</h1><h2 id="解决了搜索功能无法使用的错误"><a href="#解决了搜索功能无法使用的错误" class="headerlink" title="解决了搜索功能无法使用的错误"></a>解决了搜索功能无法使用的错误</h2><p>似乎是之前没有下载搜索插件导致的错误。。</p>
 <p>直接在命令窗口blog文件夹下运行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
 
 <p>即可</p>
 <h1 id="20210317更新"><a href="#20210317更新" class="headerlink" title="20210317更新"></a>20210317更新</h1><h2 id="添加了背景音乐"><a href="#添加了背景音乐" class="headerlink" title="添加了背景音乐"></a>添加了背景音乐</h2><p>参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_45533937/article/details/105496572">gman344的文章</a>，感谢分享。</p>
@@ -340,12 +346,21 @@
 <p>主要参考的资料：<a target="_blank" rel="noopener" href="https://enfangzhong.github.io/2019/12/08/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/">自定义友链界面参考</a></p>
 <p>1）之前搭的时候为了方便装修把个性化内容全放在source/_data/next.yml里面，配置文件的修改都在这里面进行。新建links页面之前已经有，在source/links/index.md里面头部加入type: “links”。</p>
 <p>2）配置文件menu里面加</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">links: &#x2F;links&#x2F; || fa fa-link #只是link的话没有那个锁链小图标</span><br></pre></td></tr></table></figure>
-</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">links:</span> <span class="string">/links/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-link</span> <span class="comment">#只是link的话没有那个锁链小图标</span></span><br></pre></td></tr></table></figure>
+
 <p>3）友链页面设置：在 /themes/next/layout/ 新建 links.swig，在page.swig里面引入新建的links.swig.</p>
 <p>4）配置友链信息：直接在配置文件末尾按照格式添加，多个直接加在后面就可以。</p>
 <p>勉强维持狗窝运作！</p>
+<h1 id="20240604更新"><a href="#20240604更新" class="headerlink" title="20240604更新"></a>20240604更新</h1><h2 id="添加了简陋的制品页面"><a href="#添加了简陋的制品页面" class="headerlink" title="添加了简陋的制品页面"></a>添加了简陋的制品页面</h2><p>首先在根目录底下：</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &quot;product&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后去修改主题的配置文件，隐约记得我之前把配置文件换了个位置，没在next文件夹下面了，但是没好好翻记录还是在主题的config.yml里面捣鼓了好久，放弃了第二天来弄，一看之前的记录原来已经搬到<code>source/_data/next.yml</code>里面了orz，menu下面加一行页面就好了：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Digital product:</span> <span class="string">/product/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-coffee</span></span><br><span class="line"><span class="comment"># 后面的fa是选图标，在https://fontawesome.com/v5/search找找喜欢的图标名称添加即可</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="顺便修改了代码块的风格"><a href="#顺便修改了代码块的风格" class="headerlink" title="顺便修改了代码块的风格"></a>顺便修改了代码块的风格</h2><p>也是在<code>source/_data/next.yml</code>下面修改：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  <span class="attr">highlight_theme:</span> <span class="string">night</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  <span class="attr">copy_button:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    <span class="attr">show_result:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    <span class="attr">style:</span> <span class="string">default</span></span><br></pre></td></tr></table></figure>
+
+<p>p.s. 上一次修缮一年前了orz，有人说年初的时候想重新装修一下结果没动一点（）</p>
 
     </div>
 
@@ -432,7 +447,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#20210302"><span class="nav-number">1.</span> <span class="nav-text">20210302</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5icon"><span class="nav-number">1.1.</span> <span class="nav-text">网页icon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E3%80%81%E6%96%87%E7%AB%A0%E9%98%B4%E5%BD%B1%E3%80%81%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E9%80%8F%E6%98%8E%E5%8C%96%E7%AD%89"><span class="nav-number">1.2.</span> <span class="nav-text">网页背景图片、文章阴影、博客内容透明化等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%86%E8%A7%92%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">圆角设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E8%84%9A%E7%9A%84%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B%E6%97%B6%E9%97%B4%E8%AE%B0%E5%BD%95"><span class="nav-number">1.4.</span> <span class="nav-text">页脚的网站建立时间记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.5.</span> <span class="nav-text">调整文字大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%86%E7%82%B9%E5%87%BB%E6%9F%A5%E7%9C%8B%E5%9B%BE%E7%89%87%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">添加了点击查看图片的插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210303%E6%9B%B4%E6%96%B0"><span class="nav-number">2.</span> <span class="nav-text">20210303更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">2.1.</span> <span class="nav-text">背景透明化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5"><span class="nav-number">2.2.</span> <span class="nav-text">友情链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#valine%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">2.3.</span> <span class="nav-text">valine评论功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210314%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">20210314更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%86%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">3.1.</span> <span class="nav-text">解决了搜索功能无法使用的错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210317%E6%9B%B4%E6%96%B0"><span class="nav-number">4.</span> <span class="nav-text">20210317更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%86%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90"><span class="nav-number">4.1.</span> <span class="nav-text">添加了背景音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%82%E6%97%B6%E5%85%B3%E9%97%AD%E4%BA%86valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.2.</span> <span class="nav-text">暂时关闭了valine评论系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210322%E6%9B%B4%E6%96%B0"><span class="nav-number">5.</span> <span class="nav-text">20210322更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E4%BA%86valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.1.</span> <span class="nav-text">重启了valine评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E4%BA%86valine%E8%AF%84%E8%AE%BA%E6%A1%86%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87"><span class="nav-number">5.2.</span> <span class="nav-text">增加了valine评论框中的图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20230531%E6%9B%B4%E6%96%B0"><span class="nav-number">6.</span> <span class="nav-text">20230531更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%BC%84%E4%BA%86%E4%B8%8B%E5%8F%8B%E9%93%BE"><span class="nav-number">6.1.</span> <span class="nav-text">重新弄了下友链</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#20210302"><span class="nav-number">1.</span> <span class="nav-text">20210302</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5icon"><span class="nav-number">1.1.</span> <span class="nav-text">网页icon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E3%80%81%E6%96%87%E7%AB%A0%E9%98%B4%E5%BD%B1%E3%80%81%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E9%80%8F%E6%98%8E%E5%8C%96%E7%AD%89"><span class="nav-number">1.2.</span> <span class="nav-text">网页背景图片、文章阴影、博客内容透明化等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%86%E8%A7%92%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.3.</span> <span class="nav-text">圆角设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E8%84%9A%E7%9A%84%E7%BD%91%E7%AB%99%E5%BB%BA%E7%AB%8B%E6%97%B6%E9%97%B4%E8%AE%B0%E5%BD%95"><span class="nav-number">1.4.</span> <span class="nav-text">页脚的网站建立时间记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.5.</span> <span class="nav-text">调整文字大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%86%E7%82%B9%E5%87%BB%E6%9F%A5%E7%9C%8B%E5%9B%BE%E7%89%87%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">添加了点击查看图片的插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210303%E6%9B%B4%E6%96%B0"><span class="nav-number">2.</span> <span class="nav-text">20210303更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E9%80%8F%E6%98%8E%E5%8C%96"><span class="nav-number">2.1.</span> <span class="nav-text">背景透明化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5"><span class="nav-number">2.2.</span> <span class="nav-text">友情链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#valine%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="nav-number">2.3.</span> <span class="nav-text">valine评论功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210314%E6%9B%B4%E6%96%B0"><span class="nav-number">3.</span> <span class="nav-text">20210314更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%86%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-number">3.1.</span> <span class="nav-text">解决了搜索功能无法使用的错误</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210317%E6%9B%B4%E6%96%B0"><span class="nav-number">4.</span> <span class="nav-text">20210317更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%86%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90"><span class="nav-number">4.1.</span> <span class="nav-text">添加了背景音乐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%82%E6%97%B6%E5%85%B3%E9%97%AD%E4%BA%86valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">4.2.</span> <span class="nav-text">暂时关闭了valine评论系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20210322%E6%9B%B4%E6%96%B0"><span class="nav-number">5.</span> <span class="nav-text">20210322更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AF%E4%BA%86valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.1.</span> <span class="nav-text">重启了valine评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E4%BA%86valine%E8%AF%84%E8%AE%BA%E6%A1%86%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87"><span class="nav-number">5.2.</span> <span class="nav-text">增加了valine评论框中的图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20230531%E6%9B%B4%E6%96%B0"><span class="nav-number">6.</span> <span class="nav-text">20230531更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%BC%84%E4%BA%86%E4%B8%8B%E5%8F%8B%E9%93%BE"><span class="nav-number">6.1.</span> <span class="nav-text">重新弄了下友链</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20240604%E6%9B%B4%E6%96%B0"><span class="nav-number">7.</span> <span class="nav-text">20240604更新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%86%E7%AE%80%E9%99%8B%E7%9A%84%E5%88%B6%E5%93%81%E9%A1%B5%E9%9D%A2"><span class="nav-number">7.1.</span> <span class="nav-text">添加了简陋的制品页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%BA%E4%BE%BF%E4%BF%AE%E6%94%B9%E4%BA%86%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E9%A3%8E%E6%A0%BC"><span class="nav-number">7.2.</span> <span class="nav-text">顺便修改了代码块的风格</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -516,7 +531,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:24</span>
+    <span title="Reading time total">1:25</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
   </div>
@@ -543,7 +558,7 @@ setInterval("createtime()",250);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">这里挤满了62.6k只小猫</span>
+  <span class="post-count">这里挤满了62.9k只小猫</span>
 </div>
         
 
