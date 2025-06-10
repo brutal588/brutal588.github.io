@@ -1194,7 +1194,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #fff139;
+  background: #4dffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2696,7 +2696,7 @@ ul.breadcrumb li + li:last-child {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 body {
-  background: url("/images/cat.jpg");
+  background: url("/images/IMG_3382.PNG");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
@@ -2705,7 +2705,7 @@ body {
   -o-background-size: cover;
   -moz-background-size: cover;
   -ms-background-size: cover;
-  opacity: 1;
+  opacity: 0.9;
 }
 body #footer > div > div {
   color: #000;
